@@ -16,3 +16,14 @@ values
     ('L/S T-Shirt White', '../images/logo-6-KVGE.png', 'This long sleeve tee features Killer Vibes going down the left arm and Good Energy going down the left arm with a small logo on the back and positioned just under the collar.', 29.99, 25),
     ('L/S T-Shirt Black', '../images/logo-6-KVGE.png', 'This long sleeve tee features Killer Vibes going down the left arm and Good Energy going down the left arm with a small logo on the back and positioned just under the collar.', 29.99, 25);
 select * from products;
+
+
+-- User init
+drop table if exists users;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  auth0_id VARCHAR NOT NULL,
+  email VARCHAR NOT NULL,
+  name TEXT NOT NULL
+);

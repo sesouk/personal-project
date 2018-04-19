@@ -51,8 +51,10 @@ export default class Admin extends Component {
             {e.update ? <UpdateProduct product={e} updateState={this.updateProduct}/> : 
             <div key={i}>
                 <p>{e.name}</p>
+                <img src={e.image} alt="logo"/>
                 <p>{e.price}</p>
                 <p>{e.description}</p>
+                <p>{e.stock}</p>
                 <button onClick={() => this.deleteProduct(e.product_id)}>Delete</button> {' '} <button onClick={() => this.changeProduct(e.product_id)}>Change</button>
             </div>
             }

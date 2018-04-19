@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 export default class UpdateProduct extends Component {
     constructor(){
         super();
@@ -39,7 +40,7 @@ export default class UpdateProduct extends Component {
                 <input placeholder='price' onChange={e => this.handleChange('price', e.target.value)}/>
                 <input placeholder='description' onChange={e => this.handleChange('description', e.target.value)}/>
                 <input placeholder='stock' onChange={e => this.handleChange('stock', e.target.value)}/>
-                <button onClick={() => this.updateProduct(this.state.product_id)}>Submit Changes</button> 
+                <button onClick={() => this.updateProduct(this.state.product_id)}>Submit Changes</button>
             </div>
         );
     }

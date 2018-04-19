@@ -1,8 +1,12 @@
 const ADD_TO_CART = "ADD_TO_CART";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART"
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
 
 let initialState = {
-        cart: []   
+        cart: [],
+        name: '',
+        email: '',   
 }
 export default function reducer(state=initialState, action){
     switch(action.type){
@@ -17,6 +21,18 @@ export default function reducer(state=initialState, action){
         return {
             cart: [...newCart]
         };
+        case LOGIN:
+        return { 
+            ...state, 
+            name: action.payload.name,
+            email: action.payload.email,
+         };
+         case LOGOUT:
+         return {
+            ...state,
+            name: '',
+            email: '',
+         };
         default:
         return state;
     }
@@ -28,12 +44,25 @@ export function addToCart(e, product){
     return{
         type: ADD_TO_CART,
         payload: product
-    }
-}
+    };
+};
 
 export function removeFromCart(product){
     return {
         type: REMOVE_FROM_CART,
         payload: product
-    }
-}
+    };
+};
+
+export function login(userInfo){
+    return {
+        type: LOGIN,
+        payload: userInfo,
+    };
+};
+
+export function logout(){
+    return {
+        type: LOGOUT,
+    };
+};

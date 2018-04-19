@@ -25,6 +25,7 @@ class Shop extends Component {
         let products = this.state.products.map((p,i) => {
             return <div key={i}>
                 <p>{p.name}</p>
+                <img src={p.image} alt="logo"/>
                 <p>{p.price}</p>
                 <p>{p.description}</p>
                 <button onClick={(e) => this.props.addToCart(e,p)}>Add To Cart</button>
