@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { removeFromCart } from '../ducks/reducer';
 
 class Cart extends Component {
     render() {
         let cart = this.props.cart.map((e,i) => {
             return <div key={i}>
-                <h6>{e.name}</h6>
-                <h6>{e.price}</h6>
+                <p>{e.name}</p>
+                <p>{e.price}</p>
+                <button onClick={() => this.props.removeFromCart(e.product_id)}>Remove from Cart</button>
             </div>
         })
         return (
@@ -29,4 +31,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, {removeFromCart})(Cart);

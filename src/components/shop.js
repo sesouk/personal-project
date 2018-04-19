@@ -10,7 +10,6 @@ class Shop extends Component {
         this.state = {
             products: []
         }
-        this.deleteProduct = this.deleteProduct.bind(this);
     }
     componentDidMount(){
         this.getShop()
@@ -22,18 +21,13 @@ class Shop extends Component {
             })
         })
     }
-    deleteProduct(product_id){
-        axios.delete(`/api/shop/${product_id}`).then(r => {
-            this.getShop();
-        })
-    }
     render() {
         let products = this.state.products.map((p,i) => {
             return <div key={i}>
-                <h6>{p.name}</h6>
+                <p>{p.name}</p>
                 <p>{p.price}</p>
                 <p>{p.description}</p>
-                <button onClick={() => this.deleteProduct(p.product_id)}>Delete</button> {' '} <button onClick={(e) => this.props.addToCart(e,p)}>Add To Cart</button>
+                <button onClick={(e) => this.props.addToCart(e,p)}>Add To Cart</button>
             </div>
         })
         return (
@@ -51,8 +45,7 @@ class Shop extends Component {
 
 const mapStateToProps = (state) => {
     return{
-        name: state.name,
-        price: state.price,
+        cart: state.cart
     }
 }
 
