@@ -1,5 +1,4 @@
 const axios = require("axios");
-
 module.exports = {
   getProducts: (req, res, next) => {
     const db = req.app.get("db");
@@ -52,38 +51,6 @@ module.exports = {
       );
   },
   auth: (req, res) => {
-    // axios.post(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/oauth/token`, {
-    //     client_id: process.env.REACT_APP_AUTH0_CLIENT_ID,
-    //     code: req.query.code,
-    //     client_secret: process.env.AUTH0_CLIENT_SECRET,
-    //     grant_type: 'authorization_code',
-    //     redirect_uri: `http://${req.headers.host}/auth/callback`,
-    // }).then(accessTokenResponse => {
-    //     return axios.get(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/userinfo/?access_token=${accessTokenResponse.data.access_token}`)
-    // }).then(userInfoResponse => {
-    //     const userData = userInfoResponse.data;
-    //     return req.app.get('db').find_user_by_auth0_id(userData.sub).then(users => {
-    //         // if (users.email === 'sesouk@gmail.com') {
-    //         //     const user = users[0];
-    //         //     req.session.user = {email: user.email, name: user.name};
-    //         //     res.redirect('/admin');
-    //         // }
-    //         if (users.length){
-    //             const user = users[0];
-    //             req.session.user = {email: user.email, name: user.name}
-    //         } else {
-    //             const createData = [userData.sub, userData.email, userData.name];
-    //             return req.app.get('db').createUser(createData).then(newUsers => {
-    //                 const user = newUsers[0];
-    //                 req.session.user = {email: user.email, name: user.name};
-    //             })
-    //         }
-    //     })
-    // }).catch(error => {
-    //     // res.status(500).send('A Login Error Occured 😢');
-    //     res.redirect('/error');
-    //     console.log('error', error);
-    // })
     axios
       .post(`https://${process.env.REACT_APP_AUTH0_DOMAIN}/oauth/token`, {
         client_id: process.env.REACT_APP_AUTH0_CLIENT_ID,
@@ -110,9 +77,10 @@ module.exports = {
                   const user = users[0];
                   req.session.user = {
                     email: user.email,
-                    name: user.profile_name
+                    name: user.name,
+                    cart: []
                   };
-                  res.redirect('/shop');
+                  res.redirect('/');
                 } else {
                   const createData = [
                     userData.sub,
@@ -124,9 +92,9 @@ module.exports = {
                     .createUser(createData)
                     .then(newUsers => {
                       const user = newUsers[0];
-                      req.session.user = { email: user.email, name: user.name };
+                      req.session.user = { email: user.email, name: user.name, cart: []};
                     });
-                    res.redirect('/shop');
+                    res.redirect('/');
                 }
               });
           });
@@ -139,8 +107,14 @@ module.exports = {
       });
   },
   logout: (req, res) => {
-    const name = req.session.user.name;
+    // const name = req.sezsion.user.name;
     req.session.destroy();
-    res.json({ message: `See you next time ${name}!` });
+    res.json({ message: `See you next time` });
+  },
+  cart: (req, res) => {
+    const { name, price, image } = req.body;
+    console.log(req.body);
+    req.session.user.push([...req.session.user, { name, price, image }]);
+    res.json({ cart: req.session.user });
   }
 };

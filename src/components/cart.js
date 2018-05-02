@@ -8,7 +8,7 @@ class Cart extends Component {
         let cart = this.props.cart.map((e,i) => {
             return <div key={i}>
                 <p>{e.name}</p>
-                <img src={e.image} alt="logo"/>
+                <img src={e.image} alt="shirt-front"/>
                 <p>{e.price}</p>
                 <button onClick={() => this.props.removeFromCart(e.product_id)}>Remove from Cart</button>
             </div>

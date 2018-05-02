@@ -34,3 +34,4 @@ app.post('/api/logout', ctrl.logout);
 app.get('/api/user-data', (req, res) => {
     res.json({ user: req.session.user });
   });
+app.post('/api/cart', ctrl.cart)

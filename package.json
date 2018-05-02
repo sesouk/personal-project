@@ -17,6 +17,7 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "lodash": "^4.17.10",
     "massive": "^4.7.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -24,7 +25,10 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "redux": "^3.7.2",
-    "redux-promise-middleware": "^5.0.0"
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.9.1",
+    "redux-promise-middleware": "^5.0.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

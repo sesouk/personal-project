@@ -13,7 +13,7 @@ export default function reducer(state=initialState, action){
         case ADD_TO_CART:
         return {
             ...state,
-            cart: [...state.cart, {name: action.payload.name, price: action.payload.price}]
+            cart: [...state.cart, {name: action.payload.name, price: action.payload.price, image: action.payload.image1}]
         };
         case REMOVE_FROM_CART:
         let newCart = state.cart.slice();
@@ -26,12 +26,14 @@ export default function reducer(state=initialState, action){
             ...state, 
             name: action.payload.name,
             email: action.payload.email,
+            cart: action.payload.cart
          };
          case LOGOUT:
          return {
             ...state,
             name: '',
             email: '',
+            cart: []
          };
         default:
         return state;
@@ -54,10 +56,10 @@ export function removeFromCart(product){
     };
 };
 
-export function login(userInfo){
+export function login(userData){
     return {
         type: LOGIN,
-        payload: userInfo,
+        payload: userData,
     };
 };
 

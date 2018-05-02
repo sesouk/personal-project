@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-// import axios from 'axios';
+import axios from 'axios';
 import Login from './login'
+import Logout from './logout'
 import { login, logout } from '../ducks/reducer';
 
 class Header extends Component {
-    // componentDidMount() {
-    //     axios.get('/api/profile').then(response => {
-    //       if(response.data.user){
-    //         this.props.login(response.data.user);
-    //       }
-    //     });
-    //   }
+    componentDidMount() {
+        axios.get('/api/user-data').then(response => {
+          if(response.data.user){
+            this.props.login(response.data.user);
+          }
+        });
+      }
     
       login(){
         const callbackUri = encodeURIComponent(window.location.origin + '/auth/callback');
@@ -19,8 +20,9 @@ class Header extends Component {
       }
     render() {
         return (
-            <div>
+            <div className='login-logout'>
                 <Login login={this.login}/>
+                <Logout logout={this.logout}/>
             </div>
         );
     }

@@ -1,0 +1,81 @@
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+
+img {
+    width: 50vw;
+}
+
+.mobile-nav {
+    display: flex;
+    height: 65vh;
+}
+.desktop {
+    display: none;
+}
+
+.mobile {
+    width: 100vw;
+    height: 16.25vh;
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: 'Montserrat';
+    font-size: x-large;
+    padding: .5em
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+#fb {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fb > img {
+    width: 10vw;
+}
+
+#ig {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ig > img {
+    width: 10vw;
+}
+
+#twitter {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#twitter > img {
+    width: 10vw;
+}
