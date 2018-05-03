@@ -22,15 +22,14 @@ class Shop extends Component {
             })
         })
     }
-    aTC(){
-        axios.post('/api/cart').then()
-    }
     render() {
         let products = this.state.products.map((p,i) => {
             return <div className='product-container' key={i}>
                 <p className='product'>{p.name}</p>
+                <div className='logo'>
                 <img src={p.image1} alt="shirt-front"/>
                 <img src={p.image2} alt="shirt-back"/>
+                </div>
                 <p className='info'>{p.description}</p>
                 <p className='price'>${p.price}</p>
                 <div className='button-holder'>

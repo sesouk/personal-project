@@ -9,6 +9,11 @@ span {
     flex: 1;
 }
 
+img {
+    width: 45vw;
+    padding: .25em
+}
+
 .home {
     width: 5vw;
     display: block;
@@ -39,6 +44,7 @@ span {
 
 .info {
     text-align: center;
+    padding: .25em
 }
 
 .button-holder {
@@ -51,3 +57,4 @@ span {
     border: black solid 1px;
     border-radius: 5px;
 }
+

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const Logout = (props) => {
     return (
         <div className='logout'>
-             <button  onClick={() => {
+             <button className='logout-button' onClick={() => {
                 axios.post('/api/logout').then(response => {
                     console.log(props);
                     props.logout();

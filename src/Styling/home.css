@@ -17,8 +17,9 @@ ul {
     font-size: medium;
 }
 
-img {
+.bogo {
     width: 50vw;
+    padding-top: .75em
 }
 
 .mobile-nav {

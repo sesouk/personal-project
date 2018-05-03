@@ -5,21 +5,28 @@ body {
     font-family: 'Montserrat';
   }
 
-.login-logout {
+.login {
     display: flex;
     padding: .5em
 }
 
-.login {
-    flex: 1;
-    text-align: center;
-    border: black solid 1px;
-    border-radius: 5px
+.logout {
+    display: flex;
+    padding: .5em
 }
 
-.logout {
+.login-button {
     flex: 1;
     text-align: center;
     border: black solid 1px;
-    border-radius: 5px
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.logout-button {
+    flex: 1;
+    text-align: center;
+    border: black solid 1px;
+    border-radius: 5px;
+    background-color: whitesmoke;
 }
