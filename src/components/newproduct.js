@@ -7,17 +7,44 @@ export default class NewProduct extends Component {
         super();
         this.state = {
             product_id: '',
-            image: '',
+            image1: '',
+            image2: '',
             name: '',
             price: '',
             description: '',
-            stock: ''
+            stock: '',
+            admin: false,
+            adminId: ''
         }
         this.createProduct = this.createProduct.bind(this);
     }
-    addImage(val){
+    componentDidMount(){
+        this.adminCheck();
+    }
+    adminCheck(){
+        axios.get('/api/admin').then(r => {
+            // console.log(r.data[0].auth0_id);
+            axios.get('/api/user-data').then(r2 => {
+                this.setState({adminId: r.data[0].auth0_id})
+                // console.log('---------', r2.data.user.auth0_id);
+                // console.log('---------', this.state.adminId);
+            if(r2.data.user){
+                if(r2.data.user.auth0_id === this.state.adminId)
+                {this.setState({
+                    admin: true
+                })
+            }}
+        }).catch(err => console.log(err))
+      })
+}
+    addImage1(val){
         this.setState({
-            image: val
+            image1: val
+        })
+    }
+    addImage2(val){
+        this.setState({
+            image2: val
         })
     }
     addName(val){
@@ -49,16 +76,25 @@ export default class NewProduct extends Component {
         })
     }
     render() {
-        let {image, name, price, description, stock} = this.state;
+        let {image1, image2, name, price, description, stock} = this.state;
         return (
             <div>
+                <div>
+                {this.state.admin ? 
+                <div>
                 <Link to='/admin'><button>Cancel</button></Link>
-                <input placeholder='image' onChange={e => this.addImage(e.target.value)}/>
+                <input placeholder='image1' onChange={e => this.addImage1(e.target.value)}/>
+                <input placeholder='image2' onChange={e => this.addImage2(e.target.value)}/>
                 <input placeholder='name' onChange={e => this.addName(e.target.value)}/>
                 <input placeholder='price' onChange={e => this.addPrice(e.target.value)}/>
                 <input placeholder='description' onChange={e => this.addDescription(e.target.value)}/>
                 <input placeholder='stock' onChange={e => this.addStock(e.target.value)}/>
-                <button onClick={() => this.createProduct({image, name, price, description, stock})}>Add Product</button>
+                <button onClick={() => this.createProduct({image1, image2, name, price, description, stock})}>Add Product</button>
+                </div>
+                :
+                <div><h6>UNAUTHORIZED: Please Login</h6></div>
+                }
+                </div>
             </div>
         );
     }

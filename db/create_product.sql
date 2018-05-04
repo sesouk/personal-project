@@ -1,1 +1,1 @@
-insert into products (image, name, description, price, stock) values ($1, $2, $3, $4, $5);
+insert into products (image1, image2, name, description, price, stock) values ($1, $2, $3, $4, $5, $6);

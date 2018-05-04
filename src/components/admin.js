@@ -8,13 +8,16 @@ export default class Admin extends Component {
         super()
         this.state = {
             products: [],
+            admin: false,
+            adminId: ''
             
         }
         this.deleteProduct = this.deleteProduct.bind(this);
         this.updateProduct = this.updateProduct.bind(this);
     }
     componentDidMount(){
-        this.getShop()
+        this.getShop();
+        this.adminCheck();
     }
     getShop(){
         axios.get('/api/shop').then(r => {
@@ -23,6 +26,24 @@ export default class Admin extends Component {
             })
         })
     }
+
+    adminCheck(){
+        axios.get('/api/admin').then(r => {
+            // console.log(r.data[0].auth0_id);
+            axios.get('/api/user-data').then(r2 => {
+                this.setState({adminId: r.data[0].auth0_id})
+                console.log('---------', r2.data.user.auth0_id);
+                console.log('---------', this.state.adminId);
+            if(r2.data.user){
+                if(r2.data.user.auth0_id === this.state.adminId)
+                {this.setState({
+                    admin: true
+                })
+            }}
+        }).catch(err => console.log(err))
+      })
+}
+
     deleteProduct(product_id){
         axios.delete(`/api/shop/${product_id}`).then(r => {
             this.getShop();
@@ -51,7 +72,8 @@ export default class Admin extends Component {
             {e.update ? <UpdateProduct product={e} updateState={this.updateProduct}/> : 
             <div key={i}>
                 <p>{e.name}</p>
-                <img src={e.image} alt="logo"/>
+                <img src={e.image1} alt="front"/>
+                <img src={e.image2} alt="back"/>
                 <p>{e.price}</p>
                 <p>{e.description}</p>
                 <p>{e.stock}</p>
@@ -60,13 +82,20 @@ export default class Admin extends Component {
             }
             </div>
     )
+    // console.log(this.state.admin);
         return (
             <div>
-                Shop
-                <br/>
-                <Link to='/'>Home</Link> {' '}
-                <Link to='/admin/newproduct'>Add Product</Link>
-                {products}
+                <div>
+                    {this.state.admin ? 
+                        <div>
+                        <Link to='/'><button>Home</button></Link>
+                        <Link to='/admin/newproduct'><button>Add Product</button></Link>
+                            <div>
+                            {products}
+                            </div>
+                            </div>
+                        : <div className='not-admin'><h6>UNAUTHORIZED: Please Login</h6></div>}  
+                </div>
             </div>
         );
     }

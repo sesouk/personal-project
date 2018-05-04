@@ -7,10 +7,12 @@ const Logout = (props) => {
     return (
         <div className='logout'>
              <button className='logout-button' onClick={() => {
+                 
                 axios.post('/api/logout').then(response => {
-                    console.log(props);
                     props.logout();
-                    // props.history.push('/');
+                    props.rerender()
+                    // window.location.reload();
+                    // console.log(props.history);
                 });
             }}>Logout</button>
         </div>

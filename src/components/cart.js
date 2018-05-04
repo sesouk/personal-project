@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../ducks/reducer';
+import '../Styling/cart.css'
 
 class Cart extends Component {
     render() {
@@ -15,12 +16,11 @@ class Cart extends Component {
         })
         return (
             <div>
-                Cart
-                <br/>
-                <Link to='/'>Home</Link>
-                {' '}
-                <Link to='/shop'>Shop</Link>
+                <div className='cart-nav'>
+                    <span><Link to='/'><img className='home' src="http://res.cloudinary.com/kvge/image/upload/v1525301020/web-page-home.png" alt="home-button"/></Link></span>
+                    <span><Link to='/shop'><img className='back-to-shop' src="http://res.cloudinary.com/kvge/image/upload/v1525455530/go-back-left-arrow.png"/></Link></span>
                 {cart}
+                </div>
             </div>
         );
     }

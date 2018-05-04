@@ -6,7 +6,8 @@ const LOGOUT = 'LOGOUT';
 let initialState = {
         cart: [],
         name: '',
-        email: '',   
+        email: '',
+        auth0_id: ''   
 }
 export default function reducer(state=initialState, action){
     switch(action.type){
@@ -26,6 +27,7 @@ export default function reducer(state=initialState, action){
             ...state, 
             name: action.payload.name,
             email: action.payload.email,
+            auth0_id: action.payload.auth0_id,
             cart: action.payload.cart
          };
          case LOGOUT:
@@ -33,6 +35,7 @@ export default function reducer(state=initialState, action){
             ...state,
             name: '',
             email: '',
+            auth0_id: '',
             cart: []
          };
         default:

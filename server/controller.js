@@ -24,11 +24,12 @@ module.exports = {
   updateProduct: (req, res, next) => {
     const db = req.app.get("db");
     const { params, body } = req;
-
+    console.log(body);
     db
       .update_product([
         params.id,
-        body.image,
+        body.image1,
+        body.image2,
         body.name,
         body.price,
         body.description,
@@ -41,10 +42,10 @@ module.exports = {
   },
   createProduct: (req, res, next) => {
     const db = req.app.get("db");
-    const { image, name, description, price, stock } = req.body;
+    const { image1, image2, name, description, price, stock } = req.body;
 
     db
-      .create_product([image, name, description, price, stock])
+      .create_product([image1, image2, name, description, price, stock])
       .then(products => res.status(200).send(products))
       .catch(error =>
         res.status(500).send(error, "Sorry an unknown error occured")
@@ -78,6 +79,7 @@ module.exports = {
                   req.session.user = {
                     email: user.email,
                     name: user.name,
+                    auth0_id: user.auth0_id,
                     cart: []
                   };
                   res.redirect('/');
@@ -86,6 +88,7 @@ module.exports = {
                     userData.sub,
                     userData.email,
                     userData.name,
+                    userData.auth0_id
                   ];
                   return req.app
                     .get("db")
@@ -107,7 +110,6 @@ module.exports = {
       });
   },
   logout: (req, res) => {
-    // const name = req.sezsion.user.name;
     req.session.destroy();
     res.json({ message: `See you next time` });
   },
@@ -116,5 +118,12 @@ module.exports = {
     console.log(req.body);
     req.session.user.push([...req.session.user, { name, price, image }]);
     res.json({ cart: req.session.user });
+  },
+  admin: (req, res) => {
+    const db = req.app.get("db");
+
+    db
+    .join()
+    .then(admin => res.status(200).json(admin))
   }
 };

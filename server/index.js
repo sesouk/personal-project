@@ -35,3 +35,4 @@ app.get('/api/user-data', (req, res) => {
     res.json({ user: req.session.user });
   });
 app.post('/api/cart', ctrl.cart)
+app.get('/api/admin', ctrl.admin)
