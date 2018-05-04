@@ -12,13 +12,16 @@ let initialState = {
 export default function reducer(state=initialState, action){
     switch(action.type){
         case ADD_TO_CART:
+        // console.log(action.payload.product_id);
         return {
             ...state,
-            cart: [...state.cart, {name: action.payload.name, price: action.payload.price, image: action.payload.image1}]
+            cart: [...state.cart, {name: action.payload.name, price: action.payload.price, image: action.payload.image1, id: action.payload.product_id}]
         };
         case REMOVE_FROM_CART:
         let newCart = state.cart.slice();
-        newCart.splice(newCart.indexOf() , 1);
+        // console.log(action.payload);
+        // console.log(newCart.findIndex(e => e.id === action.payload));
+        newCart.splice(newCart.findIndex(e => e.id === action.payload) , 1);
         return {
             cart: [...newCart]
         };
@@ -52,10 +55,10 @@ export function addToCart(e, product){
     };
 };
 
-export function removeFromCart(product){
+export function removeFromCart(product_id){
     return {
         type: REMOVE_FROM_CART,
-        payload: product
+        payload: product_id
     };
 };
 

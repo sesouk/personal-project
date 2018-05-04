@@ -48,10 +48,9 @@ export default class Home extends Component {
                 {time}
                 <nav className='mobile-nav'>
                     <ul>
-                    <li><button className='mobile'>Spring/Summer 2018 Lookbook</button></li>
+                    <li><Link to='/lookbook'><button className='mobile'>Spring/Summer 2018 Lookbook</button></Link></li>
                     <li><Link to='/shop'><button className='mobile'>Shop</button></Link></li>
-                    {/* <li><Link to='/cart'><button>Cart</button></Link></li> */}
-                    <li><button className='mobile'>About</button></li>
+                    <li><Link to='/about'><button className='mobile'>About</button></Link></li>
                     <li><button className='mobile'>Contact</button></li>
                     </ul>
                 </nav>
