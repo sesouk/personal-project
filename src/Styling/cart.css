@@ -22,3 +22,28 @@ span {
     margin-left: auto;
     margin-right: auto;
 }
+
+.product-container {
+    background-color: #fff;
+}
+
+.product {
+    text-align: center;
+    background-color: white;
+    padding: .5em;
+}
+
+.price {
+    text-align: center;
+}
+
+.button-holder {
+    text-align: center;
+}
+
+.rfc {
+    padding: .5em;
+    background-color: whitesmoke;
+    border: black solid 1px;
+    border-radius: 5px;
+}

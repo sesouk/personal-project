@@ -18,7 +18,7 @@ export default function reducer(state=initialState, action){
         };
         case REMOVE_FROM_CART:
         let newCart = state.cart.slice();
-        newCart.splice(newCart.indexOf(action.index) , 1);
+        newCart.splice(newCart.indexOf() , 1);
         return {
             cart: [...newCart]
         };
