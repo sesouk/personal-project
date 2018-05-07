@@ -1,129 +1,184 @@
 .shop-nav {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 1em;
 }
 
 span {
-    flex: 1;
+  flex: 1;
 }
 
 img {
-    width: 45vw;
-    padding: .25em
+  width: 45vw;
+  padding: 0.25em;
 }
 
 .shirt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home {
-    width: 5vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 5vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cart {
+  width: 5vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-container {
+  background-color: #fff;
+}
+
+.product {
+  text-align: center;
+  background-color: white;
+  padding: 0.5em;
+}
+
+.price {
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+  padding: 0.25em;
+}
+
+.button-holder {
+  text-align: center;
+}
+
+.atc {
+  padding: 0.5em;
+  background-color: whitesmoke;
+  border: black solid 1px;
+  border-radius: 5px;
+}
+
+.shoptop {
+  display: none;
+}
+
+@media (min-width: 968px) {
+  .mobile-products {
+    display: none;
+  }
+  .shop-nav {
+    display: none;
+  }
+  .shoptop-nav {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .shoptop {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+  .shoptop-container {
+    width: 100%;
+  }
+  .product-container {
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 2em;
+    min-height: 300px;
+    max-width: 300px;
+  }
+  .product {
+    background-color: black;
+  }
+  img {
+    width: 175px;
+  }
+  .home {
+    width: 2vw;
+  }
+  .cart {
+    width: 2vw;
+  }
+  .bogo-desk-shop {
     width: 5vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
 }
-
-.product-container {
-    background-color: #fff;
+@media (min-width: 1280px) {
+  .shoptop {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+  .shoptop-container {
+    width: 100%;
+  }
+  .product-container {
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 2em;
+    min-height: 300px;
+    max-width: 400px;
+  }
+  img {
+    width: 200px;
+  }
 }
-
-.product {
-    text-align: center;
-    background-color: white;
-    padding: .5em;
+@media (min-width: 1500px) {
+  .shoptop {
+    max-width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+  .shoptop-container {
+    width: 100%;
+  }
+  .product-container {
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 2em;
+    min-height: 300px;
+    max-width: 500px;
+  }
+  img {
+    width: 240px;
+  }
 }
-
-.price {
-    text-align: center;
-}
-
-.info {
-    text-align: center;
-    padding: .25em
-}
-
-.button-holder {
-    text-align: center;
-}
-
-.atc {
-    padding: .5em;
-    background-color: whitesmoke;
-    border: black solid 1px;
-    border-radius: 5px;
-}
-
-.shoptop {
-    display: none;
-}
-
-@media (min-width: 968px) {
-    .mobile-products {
-        display: none
-    }
-    .shop-nav {
-        display: none;
-    }
-    .shoptop-nav {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        padding-top: 1em;
-    }
-    .shoptop {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .product-container {
-        flex-wrap: wrap;
-        background-color: black;
-        padding: 2em;
-        min-height: 450px
-    }
-    .product {
-        background-color: black;
-        min-height: 2.5em;
-    }
-    img {
-        width: 50%;
-    }
-    .info {
-        min-height: 7em;
-    }
-    .home {
-        width: 2vw
-    }
-    .cart {
-        width: 2vw
-    }
-    .bogo-desk-shop {
-        width: 5vw;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-@media (min-width: 1120px) {
-    .info {
-        min-height: 6em
-    }
-}
-
-@media (min-width: 1320px) {
-    .info {
-        min-height: 5em
-    }
+@media (min-width: 1800px) {
+  .shoptop {
+    max-width: 1680px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-evenly;
+  }
+  .shoptop-container {
+    width: 100%;
+  }
+  .product-container {
+    flex-wrap: wrap;
+    background-color: black;
+    padding: 2em;
+    min-height: 300px;
+    max-width: 700px;
+  }
+  img {
+    width: 300px;
+  }
 }

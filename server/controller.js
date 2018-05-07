@@ -74,7 +74,7 @@ module.exports = {
               .get("db")
               .find_user_by_auth0_id(userData.sub)
               .then(users => {
-                  if (users.length) {
+                if (users.length) {
                   const user = users[0];
                   req.session.user = {
                     email: user.email,
@@ -82,7 +82,7 @@ module.exports = {
                     auth0_id: user.auth0_id,
                     cart: []
                   };
-                  res.redirect('/');
+                  res.redirect("/");
                 } else {
                   const createData = [
                     userData.sub,
@@ -95,9 +95,13 @@ module.exports = {
                     .createUser(createData)
                     .then(newUsers => {
                       const user = newUsers[0];
-                      req.session.user = { email: user.email, name: user.name, cart: []};
+                      req.session.user = {
+                        email: user.email,
+                        name: user.name,
+                        cart: []
+                      };
                     });
-                    res.redirect('/');
+                  res.redirect("/");
                 }
               });
           });
@@ -122,8 +126,6 @@ module.exports = {
   admin: (req, res) => {
     const db = req.app.get("db");
 
-    db
-    .join()
-    .then(admin => res.status(200).json(admin))
+    db.join().then(admin => res.status(200).json(admin));
   }
 };

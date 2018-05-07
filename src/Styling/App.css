@@ -1,42 +1,55 @@
 body {
-    padding: 0;
-    margin: 0;
-    background: whitesmoke;
-    font-family: 'Montserrat';
+  padding: 0;
+  margin: 0;
+  background: whitesmoke;
+  font-family: "Montserrat";
 }
 
 .login {
-    display: flex;
-    padding: .5em
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
 }
 
 .logout {
-    display: flex;
-    padding: .5em
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
 }
 
 .login-button {
-    flex: 1;
-    text-align: center;
-    border: black solid 1px;
-    border-radius: 5px;
-    background-color: whitesmoke;
+  text-align: center;
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 0.5em;
 }
 
 .logout-button {
-    flex: 1;
-    text-align: center;
-    border: black solid 1px;
-    border-radius: 5px;
-    background-color: whitesmoke;
+  text-align: center;
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 0.5em;
 }
 
 @media (min-width: 968px) {
-    .login-logout {
-        display: none
-    }
-    body {
-        background: black;
-        color: whitesmoke
-    }
+  body {
+    background: black;
+    color: whitesmoke;
+  }
+  .login-button {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+  }
+  .logout-button {
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+  }
 }

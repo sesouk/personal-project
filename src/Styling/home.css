@@ -1,129 +1,137 @@
 ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .logo-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.time-desk {
+  display: none;
+}
+.head-desk {
+  display: none;
+}
 .time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
 }
 
 .bogo {
-    width: 50vw;
-    padding-top: .75em
+  width: 50vw;
+  padding-top: 0.75em;
 }
 
 .mobile-view {
-    display: flex;
-    height: 65vh;
+  display: flex;
+  height: 65vh;
 }
 .desktop {
-    display: none;
+  display: none;
 }
 
 .mobile {
-    width: 100vw;
-    height: 16.25vh;
-    text-align: left;
-    background-color: white;
-    color: black;
-    font-family: 'Montserrat';
-    font-size: x-large;
-    padding: .5em
+  width: 100vw;
+  height: 16.25vh;
+  text-align: left;
+  background-color: white;
+  color: black;
+  font-family: "Montserrat";
+  font-size: x-large;
+  padding: 0.5em;
 }
 
 .social-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
 }
 
 #fb {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #fb > img {
-    width: 10vw;
+  width: 10vw;
 }
 
 #ig {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #ig > img {
-    width: 10vw;
+  width: 10vw;
 }
 
 #twitter {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #twitter > img {
-    width: 10vw;
+  width: 10vw;
 }
 
 .bogo-desk {
-    width: 100px;
-    padding-top: 14em;
-}
-.time-desk {
-    display: none;
-}
-.head-desk {
-    display: none;
+  width: 100px;
+  padding-top: 14em;
+  padding-left: 2.8em;
 }
 
 @media (min-width: 968px) {
-    .mobile-view {
-        display: none
-    }
-    .logo-mobile {
-        display: none
-    }
-    .time-mobile {
-        display: none
-    }
-    .social-mobile {
-        display: none
-    }
-    .desktop {
-        display: flex;
-        padding-left: 7em
-    }
-    .head-desk {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .btn {
-        color: whitesmoke;  
-        font-family: 'Montserrat';
-        background-color: transparent;
-        border: none;
-        padding: .5em
-    }
-    .time-desk {
-        padding-left: .7em;
-        font-size: x-small
-    }
+  .mobile-view {
+    display: none;
+  }
+  .logo-mobile {
+    display: none;
+  }
+  .time-mobile {
+    display: none;
+  }
+  .social-mobile {
+    display: none;
+  }
+  .desktop {
+    display: flex;
+    padding-left: 7em;
+  }
+  .head-desk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    color: whitesmoke;
+    font-family: "Montserrat";
+    background-color: transparent;
+    border: none;
+    padding: 0.5em;
+  }
+  .time-desk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .time {
+    font-size: xx-small;
+    padding-left: 6em;
+  }
+  .login-logout {
+    display: flex;
+  }
 }
-
