@@ -47,3 +47,15 @@ span {
     border: black solid 1px;
     border-radius: 5px;
 }
+
+.shirt-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+@media (min-width: 968px) {
+    .shirt-cart > img {
+        width: 40%;
+    }
+}

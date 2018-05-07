@@ -4,7 +4,7 @@ ul {
     padding: 0;
 }
 
-.logo {
+.logo-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: medium;
+    font-size: large;
 }
 
 .bogo {
@@ -22,7 +22,7 @@ ul {
     padding-top: .75em
 }
 
-.mobile-nav {
+.mobile-view {
     display: flex;
     height: 65vh;
 }
@@ -41,7 +41,7 @@ ul {
     padding: .5em
 }
 
-.social {
+.social-mobile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,3 +80,50 @@ ul {
 #twitter > img {
     width: 10vw;
 }
+
+.bogo-desk {
+    width: 100px;
+    padding-top: 14em;
+}
+.time-desk {
+    display: none;
+}
+.head-desk {
+    display: none;
+}
+
+@media (min-width: 968px) {
+    .mobile-view {
+        display: none
+    }
+    .logo-mobile {
+        display: none
+    }
+    .time-mobile {
+        display: none
+    }
+    .social-mobile {
+        display: none
+    }
+    .desktop {
+        display: flex;
+        padding-left: 7em
+    }
+    .head-desk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn {
+        color: whitesmoke;  
+        font-family: 'Montserrat';
+        background-color: transparent;
+        border: none;
+        padding: .5em
+    }
+    .time-desk {
+        padding-left: .7em;
+        font-size: x-small
+    }
+}
+

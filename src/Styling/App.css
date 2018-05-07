@@ -3,7 +3,7 @@ body {
     margin: 0;
     background: whitesmoke;
     font-family: 'Montserrat';
-  }
+}
 
 .login {
     display: flex;
@@ -29,4 +29,14 @@ body {
     border: black solid 1px;
     border-radius: 5px;
     background-color: whitesmoke;
+}
+
+@media (min-width: 968px) {
+    .login-logout {
+        display: none
+    }
+    body {
+        background: black;
+        color: whitesmoke
+    }
 }

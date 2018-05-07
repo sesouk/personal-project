@@ -9,7 +9,7 @@ class Cart extends Component {
         let cart = this.props.cart.map((e,i) => {
             return <div className='product-container' key={i}>
                 <p className='product'>{e.name}</p>
-                <div className='logo'>
+                <div className='shirt-cart'>
                 <img src={e.image} alt="shirt-front"/>
                 </div>
                 <p className='price'>${e.price}</p>
@@ -24,7 +24,7 @@ class Cart extends Component {
                     <span><Link to='/'><img className='home' src="http://res.cloudinary.com/kvge/image/upload/v1525301020/web-page-home.png" alt="home-button"/></Link></span>
                     <span><Link to='/shop'><img className='back-to-shop' src="http://res.cloudinary.com/kvge/image/upload/v1525455530/go-back-left-arrow.png" alt='back-to-shop-button'/></Link></span>
                 </div>
-                <div>
+                <div className='cart-container'>
                 {cart}
                 </div>
             </div>

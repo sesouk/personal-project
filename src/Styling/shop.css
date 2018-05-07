@@ -14,6 +14,12 @@ img {
     padding: .25em
 }
 
+.shirt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .home {
     width: 5vw;
     display: block;
@@ -58,3 +64,66 @@ img {
     border-radius: 5px;
 }
 
+.shoptop {
+    display: none;
+}
+
+@media (min-width: 968px) {
+    .mobile-products {
+        display: none
+    }
+    .shop-nav {
+        display: none;
+    }
+    .shoptop-nav {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding-top: 1em;
+    }
+    .shoptop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-container {
+        flex-wrap: wrap;
+        background-color: black;
+        padding: 2em;
+        min-height: 450px
+    }
+    .product {
+        background-color: black;
+        min-height: 2.5em;
+    }
+    img {
+        width: 50%;
+    }
+    .info {
+        min-height: 7em;
+    }
+    .home {
+        width: 2vw
+    }
+    .cart {
+        width: 2vw
+    }
+    .bogo-desk-shop {
+        width: 5vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1120px) {
+    .info {
+        min-height: 6em
+    }
+}
+
+@media (min-width: 1320px) {
+    .info {
+        min-height: 5em
+    }
+}
