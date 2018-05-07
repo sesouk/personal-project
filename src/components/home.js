@@ -43,11 +43,13 @@ export default class Home extends Component {
     return (
       <div>
         <div className="logo-mobile">
-          <img
-            className="bogo"
-            src="http://res.cloudinary.com/kvge/image/upload/c_scale,h_685/v1525298041/logo-3-KVGE.png"
-            alt="box-logo"
-          />
+          <Link to="/admin">
+            <img
+              className="bogo"
+              src="http://res.cloudinary.com/kvge/image/upload/c_scale,h_685/v1525298041/logo-3-KVGE.png"
+              alt="box-logo"
+            />
+          </Link>
         </div>
         <div className="time-mobile">{time}</div>
         <nav className="mobile-view">

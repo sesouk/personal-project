@@ -34,8 +34,8 @@ export default class Admin extends Component {
         .get("/api/user-data")
         .then(r2 => {
           this.setState({ adminId: r.data[0].auth0_id });
-          console.log("---------", r2.data.user.auth0_id);
-          console.log("---------", this.state.adminId);
+          // console.log("---------", r2.data.user.auth0_id);
+          // console.log("---------", this.state.adminId);
           if (r2.data.user) {
             if (r2.data.user.auth0_id === this.state.adminId) {
               this.setState({
