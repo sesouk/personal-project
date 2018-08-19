@@ -7,7 +7,6 @@ import '../Styling/cart.css'
 
 class Cart extends Component {
     render() {
-        // console.log(this.props.cart);
         let cart = this.props.cart.map((e,i) => {
             return <div className='product-container-cart' key={i}>
                 <p className='product'>{e.name}</p>
@@ -17,7 +16,6 @@ class Cart extends Component {
                 <p className='price'>${e.price}</p>
                 <div className='button-holder'>
                 <button className='rfc' onClick={() => { 
-                    // console.log(e.id);
                     this.props.removeFromCart(e.id)}}>Remove from Cart</button>
                 </div>
             </div>

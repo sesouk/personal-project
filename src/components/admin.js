@@ -29,13 +29,10 @@ export default class Admin extends Component {
 
   adminCheck() {
     axios.get("/api/admin").then(r => {
-      // console.log(r.data[0].auth0_id);
       axios
         .get("/api/user-data")
         .then(r2 => {
           this.setState({ adminId: r.data[0].auth0_id });
-          // console.log("---------", r2.data.user.auth0_id);
-          // console.log("---------", this.state.adminId);
           if (r2.data.user) {
             if (r2.data.user.auth0_id === this.state.adminId) {
               this.setState({
@@ -55,7 +52,7 @@ export default class Admin extends Component {
   }
   changeProduct(id) {
     let newProducts = this.state.products.slice();
-    let index = newProducts.findIndex(e => e.product_id == id);
+    let index = newProducts.findIndex(e => e.product_id === id);
     newProducts[index].update = true;
     this.setState({
       products: newProducts
@@ -63,7 +60,7 @@ export default class Admin extends Component {
   }
   updateProduct(product) {
     let newProducts = this.state.products;
-    let index = newProducts.findIndex(e => e.product_id == product.product_id);
+    let index = newProducts.findIndex(e => e.product_id === product.product_id);
     newProducts[index] = product;
     newProducts[index].update = false;
     this.setState({
@@ -80,9 +77,9 @@ export default class Admin extends Component {
             <p>{e.name}</p>
             <img src={e.image1} alt="front" />
             <img src={e.image2} alt="back" />
-            <p>{e.price}</p>
+            <p>${e.price}</p>
             <p>{e.description}</p>
-            <p>{e.stock}</p>
+            <p>Stock: {e.stock}</p>
             <button onClick={() => this.deleteProduct(e.product_id)}>
               Delete
             </button>{" "}
@@ -93,7 +90,6 @@ export default class Admin extends Component {
         )}
       </div>
     ));
-    // console.log(this.state.admin);
     return (
       <div>
         <div>

@@ -12,8 +12,6 @@ const Logout = props => {
           axios.post("/api/logout").then(response => {
             props.logout();
             props.rerender();
-            // window.location.reload();
-            // console.log(props.history);
           });
         }}
       >

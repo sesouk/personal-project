@@ -12,7 +12,6 @@ let initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_CART:
-      // console.log(action.payload.product_id);
       return {
         ...state,
         cart: [
@@ -27,8 +26,6 @@ export default function reducer(state = initialState, action) {
       };
     case REMOVE_FROM_CART:
       let newCart = state.cart.slice();
-      // console.log(action.payload);
-      // console.log(newCart.findIndex(e => e.id === action.payload));
       newCart.splice(newCart.findIndex(e => e.id === action.payload), 1);
       return {
         cart: [...newCart]
@@ -56,7 +53,6 @@ export default function reducer(state = initialState, action) {
 
 export function addToCart(e, product) {
   e.preventDefault();
-  // console.log(product);
   return {
     type: ADD_TO_CART,
     payload: product

@@ -14,7 +14,6 @@ class Header extends Component {
     };
   }
   componentDidMount() {
-    // this.logInUser();
     this.checkIfLoggedIn();
   }
 
@@ -57,7 +56,6 @@ class Header extends Component {
     }&scope=openid%20profile%20email&redirect_uri=${callbackUri}`;
   }
   render() {
-    console.log(this.state.user);
     return (
       <div className="login-logout">
         <div>

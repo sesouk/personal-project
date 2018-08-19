@@ -25,8 +25,6 @@ export default class Home extends Component {
         this.setState({
           time: [r.data]
         });
-        // console.log(r.data);
-        // console.log(this.state.time);
       });
   }
 
@@ -99,13 +97,11 @@ export default class Home extends Component {
         </div>
         <div>
           <header className="head-desk">
-            <Link to="/admin">
               <img
                 className="bogo-desk"
                 src="http://res.cloudinary.com/kvge/image/upload/v1525658069/logo-3-KVGE-whiteshadow.png"
                 alt="bogo"
               />
-            </Link>
           </header>
           <div className="time-desk">{time}</div>
           <nav className="desktop">
